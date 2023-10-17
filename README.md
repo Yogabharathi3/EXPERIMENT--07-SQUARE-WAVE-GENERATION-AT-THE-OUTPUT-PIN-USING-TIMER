@@ -44,7 +44,7 @@ In normal settings, assuming you’re using the timer module in PWM mode and gen
 
 
 
-## Procedure:
+# Procedure:
 Step1: Open CubeMX & Create New Project
  ![image](https://user-images.githubusercontent.com/36288975/226189166-ac10578c-c059-40e7-8b80-9f84f64bf088.png)
 
@@ -89,47 +89,58 @@ Step10. Double click on the the MCU part to open settings. Next to the Program F
  
 Step14. click on debug and simulate using simulation as shown below 
  ![image](https://github.com/vasanthkumarch/EXPERIMENT--07-SQUARE-WAVE-GENERATION-AT-THE-OUTPUT-PIN-USING-TIMER/assets/36288975/b8efbfc2-f0c5-4106-8117-3a6e7ac87f6c)
-
-
+# STM 32 CUBE PROGRAM :
+```
+DEVELOPED BY:YOGABHARATHI S
+REGISTER NO:212222230179
+```
+```
+MX_GPIO_Init();
+MX_TIM2_Init();
+{
+    HAL_TIM_Base_Start(&htim2);
+    HAL_TIM_PWM_Init(&htim2);
+    HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_1);
+}
+```
+# Output screen shots of proteus  :
+ ![275339833-9326961e-f7b2-4e91-b9b0-40eb8fc8c71b](https://github.com/Yogabharathi3/EXPERIMENT--07-SQUARE-WAVE-GENERATION-AT-THE-OUTPUT-PIN-USING-TIMER/assets/118899387/dcde87e6-e6fe-49c1-b4b2-b0c09802fe11)
  
+# CIRCUIT DIAGRAM (EXPORT THE GRAPHICS TO PDF AND ADD THE SCREEN SHOT HERE): 
+ ![275339861-b3a599c8-20be-4e71-b748-1dd0e2b28c88](https://github.com/Yogabharathi3/EXPERIMENT--07-SQUARE-WAVE-GENERATION-AT-THE-OUTPUT-PIN-USING-TIMER/assets/118899387/72f31d3d-efd3-4936-bf7f-68ef41cb1500)
 
-  
+# DUTY CYCLE AND FREQUENCY CALCULATION 
+### COUNTER PERIOD : 7200
+### FOR PULSE AT 4000 
+![275342592-1eb3f9bf-b7f7-4828-ba0e-e45415ea0269](https://github.com/Yogabharathi3/EXPERIMENT--07-SQUARE-WAVE-GENERATION-AT-THE-OUTPUT-PIN-USING-TIMER/assets/118899387/db9e917f-2b17-4c9d-be1c-17cf7793e8b4)
+![275342634-daebe625-008f-495c-ba45-e6d66ad88fd6](https://github.com/Yogabharathi3/EXPERIMENT--07-SQUARE-WAVE-GENERATION-AT-THE-OUTPUT-PIN-USING-TIMER/assets/118899387/e1d1c39c-a7c1-4363-bd1e-3d036c00b982)
 
-## STM 32 CUBE PROGRAM :
+TON = 2.5
+TOFF= 1
+TOTAL TIME = 1.75
+DUTY = (TON/TOTAL TIME)*100=(0.6/1.7)*100
+DUTY = 71%
 
+### COUNTER PERIOD : 7200
+### FOR PULSE AT 5500
+![275301429-e3b106f1-d4e7-4b73-82b2-b22861716988](https://github.com/Yogabharathi3/EXPERIMENT--07-SQUARE-WAVE-GENERATION-AT-THE-OUTPUT-PIN-USING-TIMER/assets/118899387/bfaf747c-f79e-40ba-8ca8-aed6a73f0678)
+![275301431-ecd553c4-dfd5-4ba5-ab94-18f330694f86](https://github.com/Yogabharathi3/EXPERIMENT--07-SQUARE-WAVE-GENERATION-AT-THE-OUTPUT-PIN-USING-TIMER/assets/118899387/a51e019a-acb9-4d3c-aab3-8e27be69d5d4)
 
+TON = 1.4
+TOFF= 0.45
+TOTAL TIME = 1.85
+DUTY = (TON/TOTAL TIME)*100=(1.4/1.85)*100
+DUTY = 76%
+### COUNTER PERIOD : 7200
+### FOR PULSE AT 3600
+![275301400-8016f74b-6263-4b97-83f9-7c2027670499](https://github.com/Yogabharathi3/EXPERIMENT--07-SQUARE-WAVE-GENERATION-AT-THE-OUTPUT-PIN-USING-TIMER/assets/118899387/22a1c1da-7c64-4d6e-aef8-43f1569d8c29)
+![275301402-1769de15-a135-409c-b99b-3c1460dfd9d9](https://github.com/Yogabharathi3/EXPERIMENT--07-SQUARE-WAVE-GENERATION-AT-THE-OUTPUT-PIN-USING-TIMER/assets/118899387/6889fd2f-b3be-4603-8ca1-29f532c714e3)
 
-
-
-## Output screen shots of proteus  :
- 
- 
- ## CIRCUIT DIAGRAM (EXPORT THE GRAPHICS TO PDF AND ADD THE SCREEN SHOT HERE): 
- 
-
-## DUTY CYCLE AND FREQUENCY CALCULATION 
-FOR PULSE AT 500
-
-TON = 
-TOFF=
-TOTAL TIME = 
-FREQUENCY = 1/(TOTAL TIME)
-
-FOR PULSE AT 700
-
-TON = 
-TOFF=
-TOTAL TIME = 
-FREQUENCY = 1/(TOTAL TIME)
-
-
-FOR PULSE AT 900
-
-TON = 
-TOFF=
-TOTAL TIME = 
-FREQUENCY = 1/(TOTAL TIME)
-
+TON = 0.9 
+TOFF= 0.9
+TOTAL TIME = 1.8
+DUTY = (TON/TOTAL TIME)*100=(0.9/1.8)*100
+DUTY = 50%
 
 ## Result :
 A PWM Signal is generated using the following frequency and various duty cycles are simulated 
